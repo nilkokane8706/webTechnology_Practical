@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Enter Your Name</h2>
+<input type="text" id="name" onkeyup="checkName()">
+<p id="result"></p>
+
+<script>
+function checkName() {
+
+    let name = document.getElementById("name").value;
+
+    let xhttp = new XMLHttpRequest();
+
+    xhttp.onload = function() {
+        document.getElementById("result").innerHTML = this.responseText;
+    };
+
+    xhttp.open("GET", "a1.php?name=" + name, true);
+    xhttp.send();
+}
+</script>
+</body>
+</html>

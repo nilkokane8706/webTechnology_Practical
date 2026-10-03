@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>City Search</h2>
+
+<input
+    type="text"
+    id="search"
+    onkeyup="searchCity()"
+    placeholder="Search city"
+>
+
+<div id="result"></div>
+
+<script>
+
+function searchCity() {
+
+    let search = document.getElementById("search").value;
+
+    let xhttp = new XMLHttpRequest();
+
+    xhttp.open("GET", "a3.php?search=" + search, true);
+
+    xhttp.onload = function() {
+
+        document.getElementById("result").innerHTML =
+        this.responseText;
+
+    };
+
+    xhttp.send();
+}
+
+</script>
+
+</body>
+</html>

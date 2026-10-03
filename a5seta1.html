@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Contact Details</h2>
+
+<button onclick="loadContacts()">Print</button>
+
+<table border="1" id="table">
+</table>
+
+<script>
+
+function loadContacts() 
+{
+    xhttp = new XMLHttpRequest();
+
+    xhttp.onload=function() 
+    {
+
+        let lines=this.responseText.trim().split("\n");
+
+        let table= `
+        <tr>
+            <th>Sr.No</th>
+            <th>Name</th>
+            <th>Residence Number</th>
+            <th>Mobile Number</th>
+            <th>Address</th>
+        </tr>
+        `;
+
+        for(let line of lines) 
+        {
+
+            let data = line.split(",");
+
+            table += `
+            <tr>
+                <td>${data[0]}</td>
+                <td>${data[1]}</td>
+                <td>${data[2]}</td>
+                <td>${data[3]}</td>
+                <td>${data[4]}</td>
+            </tr>
+            `;
+        }
+
+        document.getElementById("table").innerHTML = table;
+    };
+
+    xhttp.open("GET","contact.dat",true);
+
+    xhttp.send();
+}
+
+</script>
+
+</body>
+</html>

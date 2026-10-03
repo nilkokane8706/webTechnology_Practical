@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON Sum</title>
+</head>
+
+<body>
+
+<h2>Sum of Numbers</h2>
+
+<p id="result"></p>
+
+<script>
+
+var jsonData = "[10,20,30,40,50]";
+
+var numbers = JSON.parse(jsonData);
+
+var sum = 0;
+
+for (var i = 0; i < numbers.length; i++) {
+
+    sum = sum + numbers[i];
+
+}
+
+document.getElementById("result").innerHTML =
+    "Sum = " + sum;
+
+</script>
+
+</body>
+</html>

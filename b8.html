@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Courses</title>
+</head>
+
+<body>
+
+<h2>Select Course</h2>
+
+<select id="courses">
+
+</select>
+
+<script>
+
+var courses = [
+    {
+        "id": 1,
+        "name": "BCA",
+        "duration": "3 Years"
+    },
+    {
+        "id": 2,
+        "name": "MCA",
+        "duration": "2 Years"
+    },
+    {
+        "id": 3,
+        "name": "BSc IT",
+        "duration": "3 Years"
+    },
+    {
+        "id": 4,
+        "name": "MSc IT",
+        "duration": "2 Years"
+    }
+];
+
+for (var i = 0; i < courses.length; i++) {
+
+    var option = document.createElement("option");
+
+    option.value = courses[i].id;
+
+    option.innerHTML = courses[i].name +
+                       " - " +
+                       courses[i].duration;
+
+    document.getElementById("courses").appendChild(option);
+}
+
+</script>
+
+</body>
+</html>

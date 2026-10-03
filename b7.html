@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movies</title>
+</head>
+
+<body>
+
+<h2>Movies in Descending Order</h2>
+
+<div id="result"></div>
+
+<script>
+
+var movies = [
+    {
+        "name": "Avatar",
+        "year": 2009
+    },
+    {
+        "name": "Inception",
+        "year": 2010
+    },
+    {
+        "name": "Interstellar",
+        "year": 2014
+    },
+    {
+        "name": "Titanic",
+        "year": 1997
+    },
+    {
+        "name": "Oppenheimer",
+        "year": 2023
+    }
+];
+
+movies.sort(function(a, b) {
+    return b.year - a.year;
+});
+
+var output = "";
+
+for (var i = 0; i < movies.length; i++) {
+
+    output += movies[i].name + " - " +
+              movies[i].year + "<br>";
+
+}
+
+document.getElementById("result").innerHTML = output;
+
+</script>
+
+</body>
+</html>

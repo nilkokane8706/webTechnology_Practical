@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Search</title>
+
+    <script>
+        function searchBook() {
+
+            var search = document.getElementById("book").value;
+
+            var xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function() {
+
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("result").innerHTML =
+                        this.responseText;
+                }
+
+            };
+
+            xhttp.open("GET", "b3.php?search=" + search, true);
+            xhttp.send();
+        }
+    </script>
+</head>
+
+<body>
+
+<h2>Search Book</h2>
+
+<input type="text" id="book" onkeyup="searchBook()">
+
+<br><br>
+
+<div id="result"></div>
+
+</body>
+</html>

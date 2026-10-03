@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form to JSON</title>
+</head>
+
+<body>
+
+<h2>Student Form</h2>
+
+<form onsubmit="convertToJSON(); return false;">
+
+    Name:
+    <input type="text" id="name">
+    <br><br>
+
+    Roll Number:
+    <input type="text" id="rollno">
+    <br><br>
+
+    Marks:
+    <input type="text" id="marks">
+    <br><br>
+
+    <input type="submit" value="Convert to JSON">
+
+</form>
+
+<script>
+
+function convertToJSON() {
+
+    var student = {
+
+        "name": document.getElementById("name").value,
+
+        "rollno": document.getElementById("rollno").value,
+
+        "marks": document.getElementById("marks").value
+
+    };
+
+    var jsonData = JSON.stringify(student);
+
+    console.log(jsonData);
+
+}
+
+</script>
+
+</body>
+</html>

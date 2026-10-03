@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON Parse Example</title>
+</head>
+
+<body>
+
+    <h2>Person Details</h2>
+
+    <script>
+
+        var personJSON = '{"name":"Rohit","age":22,"city":"Mumbai"}';
+
+        var person = JSON.parse(personJSON);
+
+        document.write("Name: " + person.name + "<br>");
+        document.write("Age: " + person.age + "<br>");
+        document.write("City: " + person.city);
+
+    </script>
+
+</body>
+</html>

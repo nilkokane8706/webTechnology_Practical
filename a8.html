@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Object to JSON</title>
+</head>
+
+<body>
+
+    <h2>Product Details</h2>
+
+    <pre id="result"></pre>
+
+    <script>
+
+        var product = {
+            "name": "Laptop",
+            "price": 50000,
+            "quantity": 2
+        };
+
+        var jsonString = JSON.stringify(product);
+
+        document.getElementById("result").innerHTML = jsonString;
+
+    </script>
+
+</body>
+</html>

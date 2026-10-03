@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>AJAX Example</h2>
+
+<button onclick="loadText()">Load Paragraph</button>
+
+<p id="result"></p>
+
+<script>
+
+function loadText() {
+
+    let xhttp = new XMLHttpRequest();
+
+    xhttp.onload = function() {
+
+        document.getElementById("result").innerHTML =this.responseText;
+    };
+    xhttp.open("GET", "a2.php", true);
+    xhttp.send();
+}
+</script>
+</body>
+</html>

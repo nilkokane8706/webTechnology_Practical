@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fruit JSON Array</title>
+</head>
+
+<body>
+
+    <h2>Fruit Names</h2>
+
+    <ul id="fruits"></ul>
+
+    <script>
+
+        var fruits = [
+            "Apple",
+            "Mango",
+            "Banana",
+            "Orange",
+            "Grapes"
+        ];
+
+        for (var i = 0; i < fruits.length; i++) {
+
+            var li = document.createElement("li");
+
+            li.innerHTML = fruits[i];
+
+            document.getElementById("fruits").appendChild(li);
+        }
+
+    </script>
+
+</body>
+</html>
